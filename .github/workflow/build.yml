@@ -5,6 +5,8 @@ on:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
+     paths:
+      - "sonar/**"
 jobs:
   sonarqube:
     name: SonarQube
@@ -14,12 +16,8 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: SonarQube Scan
+        with: 
+          projectBaseDir: ./sonar
         uses: SonarSource/sonarqube-scan-action@v5
         env:
-        with:
-          args: >
-            -Dsonar.projectKey=27ff1f6cca8bb375f8873a14d6d7be3596468de1
-            -Dsonar.host.url=https://your-sonarqube-domain.com
-            -Dsonar.sources=.
-
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
