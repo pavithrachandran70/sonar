@@ -16,4 +16,10 @@ jobs:
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
+        with:
+          args: >
+            -Dsonar.projectKey=my_project_key
+            -Dsonar.host.url=https://your-sonarqube-domain.com
+            -Dsonar.sources=.
+            
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
