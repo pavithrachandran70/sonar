@@ -46,12 +46,15 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v5
         with:
           projectBaseDir: ./sonar # Assuming your sonar-project.properties is in the ./sonar directory
-          projectKey: your-project-key
-          organization: your-organization-key
+          projectKey:  pavithrachandran70_sonar
+          organization:  pavithrachandran70
           sonarQubeVersion: latest
           scannerMode: CLI
           configMode: projectKey
           cliVersion: latest
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.https://sonarcloud.io }}
+          SONAR_HOST_URL: https://sonarcloud.io
+
+
+
