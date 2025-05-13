@@ -18,8 +18,8 @@ jobs:
         env:
         with:
           args: >
-            -Dsonar.projectKey=my_project_key
+            -Dsonar.projectKey=27ff1f6cca8bb375f8873a14d6d7be3596468de1
             -Dsonar.host.url=https://your-sonarqube-domain.com
             -Dsonar.sources=.
-            
+
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
